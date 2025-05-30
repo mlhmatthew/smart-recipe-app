@@ -1,0 +1,3 @@
+streamlit
+inflect
+fpdf
