@@ -1,40 +1,50 @@
-# smart-recipe-app
-Smart Recipe Recommender is a user-friendly app designed to simplify meal planning, reduce food waste, and save money. It helps users discover recipes based on ingredients they already have at home, while also generating a smart shopping list for any missing items.
-
 # Smart Recipe Recommender
 
-The Smart Recipe Recommender is a Streamlit-based web application that helps users discover recipes based on ingredients they already have. It provides recipe suggestions, identifies missing ingredients, estimates cost, and generates a customizable shopping list that can be exported as a PDF.
+The Smart Recipe Recommender is an interactive web app that helps users discover what they can cook based on the ingredients they already have. Users can select ingredients, filter by cuisine, view recipe suggestions, and generate a smart shopping list with estimated prices and store links.
 
-## Features
+## 🌐 Try the App Online
+No installation is required — just click and start using it:
 
-- Select ingredients you currently have
-- Filter recipes by cuisine
-- Get recipe recommendations with 50% or higher match
-- View missing ingredients with Walmart.ca search links
-- Estimate total cost using average Canadian prices
-- Add extra ingredients and adjust quantities
-- Export the final shopping list as a downloadable PDF
-- Link to Google search for full recipe instructions
-- Includes serving estimates per recipe
+🔗 [Launch Smart Recipe App](https://mlhmatthew-smart-recipe-app.streamlit.app/)
 
-## Planned Future Enhancements
+## 🛠 Features
+- Select ingredients from your kitchen.
+- Filter recipes by cuisine.
+- See which ingredients you're missing.
+- Generate a shopping list with estimated prices.
+- Export the list to PDF.
+- Optionally add extra ingredients and adjust quantities.
+- Google search links to learn how to cook each selected recipe.
 
-- Integrate supermarket flyer scraping to highlight weekly deals for missing ingredients
-- Add personalized recipe recommendations
-- Multi-language support
+## 🚀 Future Plans
+- Integrate flyer scraping to highlight supermarket deals for missing ingredients.
+- Support personalized recommendations based on dietary preferences and meal types.
 
-## Try It Online
+## 💻 Run Locally (Optional)
+If you'd like to run the app on your own machine:
 
-To run the app online:
-
-1. Fork or clone this repository
-2. Push it to your own GitHub account
-3. Deploy using [Streamlit Cloud](https://streamlit.io/cloud)
-
-## Run Locally
-
+### 1. Clone this repository
 ```bash
 git clone https://github.com/mlhmatthew/smart-recipe-recommender.git
 cd smart-recipe-recommender
+```
+
+### 2. Install dependencies
+```bash
 pip install -r requirements.txt
+```
+
+### 3. Run the app
+```bash
 streamlit run app.py
+```
+
+## 📂 Files Included
+- `app.py`: Main Streamlit application.
+- `recipe_database.py`: Contains the recipe dataset.
+- `ingredient_prices.py`: Ingredient price estimates.
+- `requirements.txt`: List of required Python packages.
+
+---
+
+Enjoy cooking smarter!
