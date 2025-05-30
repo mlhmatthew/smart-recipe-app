@@ -34,7 +34,7 @@ To run the app online:
 ## Run Locally
 
 ```bash
-git clone https://github.com/yourusername/smart-recipe-recommender.git
+git clone https://github.com/mlhmatthew/smart-recipe-recommender.git
 cd smart-recipe-recommender
 pip install -r requirements.txt
 streamlit run app.py
