@@ -16,6 +16,16 @@ def normalize_ingredient(word):
 # Set page config
 st.set_page_config(page_title="Smart Recipe Recommender", layout="centered")
 st.title("Smart Recipe Recommender")
+
+# Instructions
+st.markdown("---")
+st.markdown("### How to Use")
+st.markdown("1. Select ingredients you have.")
+st.markdown("2. Choose cuisine and get matching recipes.")
+st.markdown("3. Select dishes to make and confirm shopping list.")
+st.markdown("4. Add optional extras, review list, then export PDF.")
+
+
 st.write("Select your ingredients and discover what you can cook!")
 
 # Ingredient data
@@ -34,6 +44,8 @@ if 'custom_additions' not in st.session_state:
     st.session_state.custom_additions = {}
 if 'recommendations' not in st.session_state:
     st.session_state.recommendations = []
+if 'editable_shopping_list' not in st.session_state:
+    st.session_state.editable_shopping_list = {}
 
 # Ingredient selection
 st.subheader("Select Your Ingredients")
@@ -97,8 +109,6 @@ def create_shopping_list(selected_names):
 if st.session_state.selected_recipes:
     shopping_list, recipe_map = create_shopping_list(st.session_state.selected_recipes)
 
-    if 'editable_shopping_list' not in st.session_state:
-        st.session_state.editable_shopping_list = shopping_list.copy()
 
     st.subheader("Smart Shopping List")
     total_cost = 0
@@ -131,9 +141,13 @@ if st.session_state.selected_recipes:
     for ing in extra:
         qty = st.number_input(f"Quantity for {ing}", min_value=1, value=1, key=f"qty_{ing}")
         extra_qty[ing] = qty
+    # Merge extra ingredients into the editable shopping list
+    combined_list = shopping_list.copy()
     for ing, qty in extra_qty.items():
-        st.session_state.editable_shopping_list[ing] = st.session_state.editable_shopping_list.get(ing, 0) + qty
+        combined_list[ing] = combined_list.get(ing, 0) + qty
 
+    st.session_state.editable_shopping_list = combined_list
+    
     # Review list before export
     st.subheader("🧾 Final Shopping List Review")
     updated_quantities = {}
@@ -166,10 +180,3 @@ if st.session_state.selected_recipes:
 else:
     st.info("Please click 'Get Recipes' and select your dishes before proceeding to the shopping list.")
 
-# Instructions
-st.markdown("---")
-st.markdown("### How to Use")
-st.markdown("1. Select ingredients you have.")
-st.markdown("2. Choose cuisine and get matching recipes.")
-st.markdown("3. Select dishes to make and confirm shopping list.")
-st.markdown("4. Add optional extras, review list, then export PDF.")
