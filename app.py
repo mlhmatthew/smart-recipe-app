@@ -10,9 +10,10 @@ from fpdf import FPDF
 import tempfile
 
 # -------------------- LOGIN SETUP --------------------
-names = ['Alice', 'Bob','Matthew']
-usernames = ['alice', 'bob','matthew']
-passwords = ['123', '456','789']
+names = ['Alice', 'Bob', 'Matthew', 'Hilary']
+usernames = ['alice', 'bob', 'matthew', 'hilary']
+passwords = ['123', '456', '789', '422']
+
 hashed_pw = Hasher.hash_list(passwords)
 
 credentials = {
