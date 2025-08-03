@@ -21,6 +21,7 @@ No installation required—just click and start using:
 | alice     | 123      |
 | bob       | 456      |
 | matthew   | 789      |
+| hilary    | 422      |
 
 **User registration is currently disabled. Please use one of the above accounts to log in and explore the app.**
 
